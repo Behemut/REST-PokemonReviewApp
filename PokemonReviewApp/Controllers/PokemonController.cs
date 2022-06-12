@@ -5,8 +5,7 @@ using PokemonReviewApp.DTO;
 using PokemonReviewApp.Interfaces;
 using PokemonReviewApp.Models;
 
-namespace PokemonReviewApp.Controllers
-{
+namespace PokemonReviewApp.Controllers {
     [Route("api/[controller]")]
     [ApiController]
     public class PokemonController : ControllerBase
@@ -21,6 +20,7 @@ namespace PokemonReviewApp.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ICollection<Pokemon>))]
+        [ProducesResponseType(400)]
         public IActionResult GetPokemons()
         {
             //var pokemons = _mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
@@ -48,13 +48,6 @@ namespace PokemonReviewApp.Controllers
 
             return Ok(pokemon);
         }
-
-
-
-
-
-        
-
 
     }
         
